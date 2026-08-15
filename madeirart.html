@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Madeirart × Fluyr Boats | Móveis Artesanais</title>
+  <title>Madeirart × Fluyr Boats | Produtos Artesanais</title>
 
   <meta
     name="description"
-    content="Conheça a coleção de móveis artesanais Madeirart em collab com Fluyr Boats. Peças feitas à mão para ambientes internos e externos."
-  />
+    content="Conheça a coleção artesanal Madeirart em collab com Fluyr Boats. Cadeiras, espreguiçadeiras e peças feitas à mão."
+  >
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
     rel="stylesheet"
-  />
+  >
 
   <style>
     :root {
       --verde: #123c35;
       --verde-escuro: #082b25;
-      --verde-medio: #1b5146;
       --bege: #f5f0e8;
       --bege-escuro: #e8ddcc;
       --laranja: #bd6939;
@@ -59,7 +58,7 @@
 
     img {
       display: block;
-      width: 100%;
+      max-width: 100%;
     }
 
     a {
@@ -104,7 +103,7 @@
     .brand {
       align-items: center;
       display: flex;
-      gap: 13px;
+      gap: 14px;
     }
 
     .brand-madeirart {
@@ -120,55 +119,16 @@
       font-size: 20px;
     }
 
-    .fluyr-brand {
-      align-items: center;
-      display: flex;
-      gap: 8px;
-    }
-
-    .fluyr-symbol {
-      align-items: center;
-      background: var(--verde);
-      color: var(--dourado);
-      display: flex;
-      font-family: "Playfair Display", serif;
-      font-size: 20px;
-      font-weight: 700;
-      height: 38px;
-      justify-content: center;
-      width: 32px;
-    }
-
-    .fluyr-name {
-      color: var(--verde);
-      font-family: "Playfair Display", serif;
-      font-size: 17px;
-      font-weight: 700;
-      line-height: 1;
-    }
-
-    .fluyr-name small {
-      color: var(--laranja);
-      display: block;
-      font-family: "DM Sans", sans-serif;
-      font-size: 8px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      margin-top: 4px;
-    }
-
-    .logo-pdf {
-      color: var(--laranja);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+    .logo-fluyr {
+      height: 54px;
+      object-fit: contain;
+      width: 150px;
     }
 
     nav {
       align-items: center;
       display: flex;
-      gap: 25px;
+      gap: 24px;
     }
 
     nav a {
@@ -228,7 +188,7 @@
       align-items: center;
       display: flex;
       min-height: 620px;
-      max-width: 690px;
+      max-width: 700px;
     }
 
     .etiqueta {
@@ -339,6 +299,7 @@
       aspect-ratio: 1.5 / 1;
       background: var(--bege-escuro);
       object-fit: cover;
+      width: 100%;
     }
 
     .produto-conteudo {
@@ -454,6 +415,7 @@
       border-radius: 8px;
       min-height: 420px;
       object-fit: cover;
+      width: 100%;
     }
 
     .passos {
@@ -595,6 +557,7 @@
       height: 100%;
       min-height: 350px;
       object-fit: cover;
+      width: 100%;
     }
 
     .modal-texto {
@@ -674,13 +637,13 @@
         font-size: 16px;
       }
 
-      .brand-divider,
-      .logo-pdf {
+      .brand-divider {
         display: none;
       }
 
-      .fluyr-name {
-        font-size: 14px;
+      .logo-fluyr {
+        height: 43px;
+        width: 120px;
       }
 
       .modal-corpo {
@@ -700,38 +663,27 @@
 </head>
 
 <body>
+
   <div class="topbar">
     Campanha especial de 7 de setembro · Peças artesanais feitas à mão
   </div>
 
   <header>
     <div class="container navbar">
+
       <a
         href="#inicio"
         class="brand"
-        aria-label="Madeirart em collab com Fluyr Boats"
+        aria-label="Madeirart e Fluyr Boats"
       >
         <span class="brand-madeirart">Madeirart</span>
         <span class="brand-divider">×</span>
 
-        <span class="fluyr-brand">
-          <span class="fluyr-symbol">F</span>
-
-          <span class="fluyr-name">
-            Fluyr Boats
-            <small>BYVOAMENINA</small>
-          </span>
-        </span>
-
-        <a
-          class="logo-pdf"
-          href="assets/Fluyr_Boats_Logo_Alta_Qualidade.pdf"
-          target="_blank"
-          rel="noopener"
-          aria-label="Abrir logo Fluyr Boats em PDF"
+        <img
+          class="logo-fluyr"
+          src="assets/Fluyr_Boats_Logo_Alta_Qualidade-1.jpg"
+          alt="Fluyr Boats by Voamenina"
         >
-          Logo
-        </a>
       </a>
 
       <nav aria-label="Navegação principal">
@@ -741,17 +693,19 @@
 
         <a
           class="botao"
-          href="https://wa.me/5516997153724?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20os%20produtos%20da%20Madeirart."
+          href="https://wa.me/5516997153724?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20os%20produtos%20da%20Madeirart."
           target="_blank"
           rel="noopener"
         >
           Falar com especialista
         </a>
       </nav>
+
     </div>
   </header>
 
   <main id="inicio">
+
     <section class="hero">
       <div class="container hero-conteudo">
         <div>
@@ -776,7 +730,7 @@
             </a>
 
             <a
-              href="https://wa.me/5516997153724?text=Ol%C3%A1!%20Gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20o%20cat%C3%A1logo%20artesanal%20da%20Madeirart."
+              href="https://wa.me/5516997153724?text=Olá!%20Gostaria%20de%20receber%20informações%20sobre%20o%20catálogo%20artesanal%20da%20Madeirart."
               target="_blank"
               rel="noopener"
               class="botao botao-contorno"
@@ -790,6 +744,7 @@
 
     <section id="catalogo">
       <div class="container">
+
         <div class="catalogo-topo">
           <div class="cabecalho-secao">
             <div class="etiqueta">Coleção artesanal</div>
@@ -822,11 +777,13 @@
         </div>
 
         <div class="produtos" id="listaProdutos"></div>
+
       </div>
     </section>
 
     <section class="artesanal" id="artesanal">
       <div class="container artesanal-grid">
+
         <div>
           <div class="etiqueta">O valor do feito à mão</div>
 
@@ -839,9 +796,9 @@
           </p>
 
           <div class="lista-beneficios">
+
             <div class="beneficio">
               <div class="beneficio-icone">✓</div>
-
               <div>
                 <strong>Produção artesanal</strong>
                 <span>
@@ -852,7 +809,6 @@
 
             <div class="beneficio">
               <div class="beneficio-icone">✓</div>
-
               <div>
                 <strong>Tramas feitas à mão</strong>
                 <span>
@@ -863,7 +819,6 @@
 
             <div class="beneficio">
               <div class="beneficio-icone">✓</div>
-
               <div>
                 <strong>Orientação personalizada</strong>
                 <span>
@@ -871,20 +826,23 @@
                 </span>
               </div>
             </div>
+
           </div>
         </div>
 
         <img
           class="artesanal-imagem"
           src="assets/foto1.jpeg"
-          alt="Cadeiras artesanais com trama manual em ambiente de jantar"
+          alt="Cadeiras artesanais com trama manual"
           loading="lazy"
-        />
+        >
+
       </div>
     </section>
 
     <section id="processo">
       <div class="container">
+
         <div class="cabecalho-secao">
           <div class="etiqueta">Como comprar</div>
 
@@ -897,11 +855,10 @@
         </div>
 
         <div class="passos">
+
           <article class="passo">
             <span class="passo-numero">01</span>
-
             <h3>Escolha sua peça</h3>
-
             <p>
               Conheça o catálogo e selecione o produto que mais combina
               com seu ambiente.
@@ -910,9 +867,7 @@
 
           <article class="passo">
             <span class="passo-numero">02</span>
-
             <h3>Fale com a equipe</h3>
-
             <p>
               Envie suas dúvidas pelo WhatsApp e informe a quantidade desejada.
             </p>
@@ -920,44 +875,47 @@
 
           <article class="passo">
             <span class="passo-numero">03</span>
-
             <h3>Receba seu orçamento</h3>
-
             <p>
               Consulte valores, disponibilidade, prazo e opções de entrega.
             </p>
           </article>
+
         </div>
       </div>
     </section>
 
     <section class="cta" id="contato">
       <div class="container">
+
         <h2>Gostou de alguma peça?</h2>
 
         <p>
-          Solicite um orçamento personalizado pelo WhatsApp e descubra as
-          opções disponíveis para o seu projeto.
+          Solicite um orçamento personalizado pelo WhatsApp e descubra
+          as opções disponíveis para o seu projeto.
         </p>
 
         <a
           class="botao botao-contorno"
-          href="https://wa.me/5516997153724?text=Ol%C3%A1!%20Vi%20o%20cat%C3%A1logo%20da%20Madeirart%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+          href="https://wa.me/5516997153724?text=Olá!%20Vi%20o%20catálogo%20da%20Madeirart%20e%20gostaria%20de%20solicitar%20um%20orçamento."
           target="_blank"
           rel="noopener"
         >
           Solicitar orçamento pelo WhatsApp
         </a>
+
       </div>
     </section>
+
   </main>
 
   <footer>
     <div class="container">
+
       <div class="rodape-grid">
+
         <div>
           <h3>Madeirart × Fluyr Boats</h3>
-
           <p>
             Produtos artesanais feitos à mão para ambientes com mais conforto,
             estilo e personalidade.
@@ -966,9 +924,7 @@
 
         <div>
           <h3>Atendimento</h3>
-
           <p>Segunda a sexta, das 9h às 18h</p>
-
           <p>
             WhatsApp:
             <a
@@ -983,18 +939,11 @@
 
         <div>
           <h3>Links rápidos</h3>
-
-          <p>
-            <a href="#catalogo">Catálogo</a>
-          </p>
-
-          <p>
-            <a href="#artesanal">Produção artesanal</a>
-          </p>
-
+          <p><a href="#catalogo">Catálogo</a></p>
+          <p><a href="#artesanal">Produção artesanal</a></p>
           <p>
             <a
-              href="https://wa.me/5516997153724?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+              href="https://wa.me/5516997153724?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
               target="_blank"
               rel="noopener"
             >
@@ -1002,17 +951,19 @@
             </a>
           </p>
         </div>
+
       </div>
 
       <div class="rodape-final">
         © 2026 Madeirart. Todos os direitos reservados.
       </div>
+
     </div>
   </footer>
 
   <a
     class="whatsapp-flutuante"
-    href="https://wa.me/5516997153724?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20artesanais%20da%20Madeirart."
+    href="https://wa.me/5516997153724?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20artesanais%20da%20Madeirart."
     target="_blank"
     rel="noopener"
     aria-label="Falar com a Madeirart pelo WhatsApp"
@@ -1029,6 +980,7 @@
     aria-labelledby="tituloModal"
   >
     <div class="modal-conteudo">
+
       <button
         class="fechar-modal"
         type="button"
@@ -1038,12 +990,13 @@
       </button>
 
       <div class="modal-corpo">
+
         <img
           class="modal-imagem"
           id="imagemModal"
           src=""
           alt=""
-        />
+        >
 
         <div class="modal-texto">
           <span class="produto-categoria" id="categoriaModal"></span>
@@ -1053,7 +1006,7 @@
           <p id="descricaoModal"></p>
 
           <p>
-            <strong>Consulte pelo WhatsApp:</strong><br />
+            <strong>Consulte pelo WhatsApp:</strong><br>
             cores, medidas, materiais, disponibilidade, prazo e condições
             de entrega.
           </p>
@@ -1068,6 +1021,7 @@
             Solicitar orçamento
           </a>
         </div>
+
       </div>
     </div>
   </div>
@@ -1150,7 +1104,7 @@
                 src="assets/${produto.arquivo}"
                 alt="${produto.nome} — produto artesanal Madeirart"
                 loading="lazy"
-              />
+              >
 
               <div class="produto-conteudo">
                 <span class="produto-categoria">
@@ -1171,7 +1125,7 @@
                   <button
                     class="detalhes"
                     type="button"
-                    onclick="abrirProduto(${produto.id})"
+                    data-produto-id="${produto.id}"
                   >
                     Ver detalhes →
                   </button>
@@ -1181,6 +1135,12 @@
           `
         )
         .join("");
+
+      document.querySelectorAll("[data-produto-id]").forEach((botao) => {
+        botao.addEventListener("click", () => {
+          abrirProduto(Number(botao.dataset.produtoId));
+        });
+      });
     }
 
     function abrirProduto(id) {
@@ -1244,5 +1204,6 @@
 
     renderizarProdutos();
   </script>
+
 </body>
 </html>
