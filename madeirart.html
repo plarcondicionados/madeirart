@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Madeirart × Fluyr Boats | Produtos Artesanais</title>
+
+  <meta
+    name="description"
+    content="Conheça a coleção artesanal Madeirart em collab com Fluyr Boats. Cadeiras, espreguiçadeiras e peças feitas à mão."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --verde: #123c35;
+      --verde-escuro: #082b25;
+      --bege: #f5f0e8;
+      --bege-escuro: #e8ddcc;
+      --laranja: #bd6939;
+      --dourado: #d5a66c;
+      --texto: #28312d;
+      --cinza: #6c7772;
+      --branco: #ffffff;
+      --borda: #e5ddd1;
+      --whatsapp: #25d366;
+      --sombra: 0 18px 45px rgba(18, 60, 53, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bege);
+      color: var(--texto);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.5;
+    }
+
+    body.modal-aberto {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .container {
+      margin: 0 auto;
+      width: min(1160px, calc(100% - 40px));
+    }
+
+    .topbar {
+      background: var(--verde-escuro);
+      color: var(--branco);
+      font-size: 13px;
+      padding: 9px 20px;
+      text-align: center;
+    }
+
+    header {
+      background: rgba(245, 240, 232, 0.96);
+      border-bottom: 1px solid rgba(18, 60, 53, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .navbar {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      min-height: 82px;
+    }
+
+    .brand {
+      align-items: center;
+      display: flex;
+      gap: 14px;
+    }
+
+    .brand-madeirart {
+      color: var(--verde);
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-divider {
+      color: #aeb8b0;
+      font-size: 20px;
+    }
+
+    .logo-fluyr {
+      height: 54px;
+      object-fit: contain;
+      width: 150px;
+    }
+
+    nav {
+      align-items: center;
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      color: var(--verde);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .botao {
+      align-items: center;
+      background: var(--verde);
+      border-radius: 5px;
+      color: var(--branco);
+      display: inline-flex;
+      font-size: 14px;
+      font-weight: 700;
+      justify-content: center;
+      padding: 14px 22px;
+      transition: 0.25s ease;
+    }
+
+    .botao:hover {
+      background: var(--laranja);
+      transform: translateY(-2px);
+    }
+
+    .botao-claro {
+      background: var(--branco);
+      color: var(--verde);
+    }
+
+    .botao-claro:hover {
+      background: var(--verde-escuro);
+      color: var(--branco);
+    }
+
+    .botao-contorno {
+      background: transparent;
+      border: 1px solid var(--branco);
+      color: var(--branco);
+    }
+
+    .botao-contorno:hover {
+      background: var(--branco);
+      color: var(--verde);
+    }
+
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(8, 43, 37, 0.94), rgba(8, 43, 37, 0.3)),
+        url("assets/c3.jpeg") center / cover;
+      color: var(--branco);
+      min-height: 620px;
+    }
+
+    .hero-conteudo {
+      align-items: center;
+      display: flex;
+      min-height: 620px;
+      max-width: 700px;
+    }
+
+    .etiqueta {
+      color: var(--laranja);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 7vw, 74px);
+      line-height: 1.04;
+      margin-bottom: 23px;
+    }
+
+    .hero h1 span {
+      color: var(--dourado);
+    }
+
+    .hero p {
+      color: #e6eee9;
+      font-size: 18px;
+      margin-bottom: 31px;
+      max-width: 570px;
+    }
+
+    .hero-acoes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .cabecalho-secao {
+      margin-bottom: 38px;
+      max-width: 700px;
+    }
+
+    .cabecalho-secao h2 {
+      color: var(--verde);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(34px, 4vw, 50px);
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .cabecalho-secao p {
+      color: var(--cinza);
+      font-size: 16px;
+    }
+
+    .catalogo-topo {
+      align-items: end;
+      display: flex;
+      gap: 25px;
+      justify-content: space-between;
+    }
+
+    .filtros {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 38px;
+    }
+
+    .filtro {
+      background: transparent;
+      border: 1px solid var(--borda);
+      border-radius: 30px;
+      color: var(--cinza);
+      padding: 10px 16px;
+      transition: 0.2s ease;
+    }
+
+    .filtro:hover,
+    .filtro.ativo {
+      background: var(--verde);
+      border-color: var(--verde);
+      color: var(--branco);
+    }
+
+    .produtos {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .produto {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: 0.25s ease;
+    }
+
+    .produto:hover {
+      box-shadow: var(--sombra);
+      transform: translateY(-5px);
+    }
+
+    .produto-imagem {
+      aspect-ratio: 1.5 / 1;
+      background: var(--bege-escuro);
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .produto-conteudo {
+      padding: 23px;
+    }
+
+    .produto-categoria {
+      color: var(--laranja);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .produto h3 {
+      color: var(--verde);
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      line-height: 1.1;
+      margin: 8px 0;
+    }
+
+    .produto-descricao {
+      color: var(--cinza);
+      font-size: 14px;
+      min-height: 66px;
+    }
+
+    .produto-rodape {
+      align-items: center;
+      border-top: 1px solid var(--borda);
+      display: flex;
+      gap: 15px;
+      justify-content: space-between;
+      margin-top: 21px;
+      padding-top: 17px;
+    }
+
+    .produto-preco {
+      color: var(--verde);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .detalhes {
+      background: transparent;
+      color: var(--laranja);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .artesanal {
+      background: var(--verde);
+      color: var(--branco);
+    }
+
+    .artesanal-grid {
+      align-items: center;
+      display: grid;
+      gap: 65px;
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+
+    .artesanal h2 {
+      color: var(--branco);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(35px, 4vw, 53px);
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .artesanal p {
+      color: #dce8e0;
+      margin-bottom: 27px;
+    }
+
+    .lista-beneficios {
+      display: grid;
+      gap: 18px;
+    }
+
+    .beneficio {
+      align-items: flex-start;
+      display: flex;
+      gap: 15px;
+    }
+
+    .beneficio-icone {
+      align-items: center;
+      background: var(--dourado);
+      border-radius: 50%;
+      color: var(--verde);
+      display: flex;
+      flex-shrink: 0;
+      font-weight: 700;
+      height: 28px;
+      justify-content: center;
+      width: 28px;
+    }
+
+    .beneficio strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .beneficio span {
+      color: #cbd9d0;
+      font-size: 14px;
+    }
+
+    .artesanal-imagem {
+      border-radius: 8px;
+      min-height: 420px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .passos {
+      display: grid;
+      gap: 25px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .passo {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: 8px;
+      padding: 29px;
+    }
+
+    .passo-numero {
+      color: var(--laranja);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .passo h3 {
+      color: var(--verde);
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      margin: 12px 0 8px;
+    }
+
+    .passo p {
+      color: var(--cinza);
+      font-size: 14px;
+    }
+
+    .cta {
+      background:
+        linear-gradient(90deg, rgba(189, 105, 57, 0.94), rgba(189, 105, 57, 0.72)),
+        url("assets/foto2.jpeg") center / cover;
+      color: var(--branco);
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(34px, 5vw, 55px);
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      margin: 0 auto 27px;
+      max-width: 620px;
+    }
+
+    footer {
+      background: var(--verde-escuro);
+      color: #d9e3dc;
+      padding: 48px 0 22px;
+    }
+
+    .rodape-grid {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-bottom: 35px;
+    }
+
+    footer h3 {
+      color: var(--branco);
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer a {
+      color: #b8c9bf;
+      font-size: 14px;
+    }
+
+    .rodape-final {
+      border-top: 1px solid rgba(255, 255, 255, 0.13);
+      color: #9eb1a5;
+      font-size: 12px;
+      padding-top: 19px;
+    }
+
+    .whatsapp-flutuante {
+      align-items: center;
+      background: var(--whatsapp);
+      border-radius: 50%;
+      bottom: 22px;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.22);
+      color: var(--branco);
+      display: flex;
+      font-size: 25px;
+      height: 57px;
+      justify-content: center;
+      position: fixed;
+      right: 22px;
+      transition: 0.2s ease;
+      width: 57px;
+      z-index: 30;
+    }
+
+    .whatsapp-flutuante:hover {
+      transform: scale(1.08);
+    }
+
+    .modal {
+      align-items: center;
+      background: rgba(0, 0, 0, 0.68);
+      display: none;
+      inset: 0;
+      justify-content: center;
+      padding: 20px;
+      position: fixed;
+      z-index: 50;
+    }
+
+    .modal.aberto {
+      display: flex;
+    }
+
+    .modal-conteudo {
+      background: var(--branco);
+      border-radius: 9px;
+      max-height: 90vh;
+      max-width: 850px;
+      overflow: auto;
+      position: relative;
+      width: 100%;
+    }
+
+    .modal-corpo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .modal-imagem {
+      height: 100%;
+      min-height: 350px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .modal-texto {
+      padding: 42px;
+    }
+
+    .modal-texto h2 {
+      color: var(--verde);
+      font-family: "Playfair Display", serif;
+      font-size: 38px;
+      line-height: 1.1;
+      margin: 8px 0 15px;
+    }
+
+    .modal-texto p {
+      color: var(--cinza);
+      font-size: 15px;
+      margin-bottom: 22px;
+    }
+
+    .fechar-modal {
+      background: var(--branco);
+      border-radius: 50%;
+      color: var(--verde);
+      font-size: 24px;
+      height: 38px;
+      position: absolute;
+      right: 14px;
+      top: 14px;
+      width: 38px;
+      z-index: 2;
+    }
+
+    @media (max-width: 850px) {
+      nav {
+        display: none;
+      }
+
+      .produtos,
+      .passos,
+      .rodape-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .artesanal-grid {
+        gap: 35px;
+        grid-template-columns: 1fr;
+      }
+
+      .catalogo-topo {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 570px) {
+      .container {
+        width: calc(100% - 28px);
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .produtos,
+      .passos,
+      .rodape-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero,
+      .hero-conteudo {
+        min-height: 570px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .brand-divider {
+        display: none;
+      }
+
+      .logo-fluyr {
+        height: 43px;
+        width: 120px;
+      }
+
+      .modal-corpo {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-imagem {
+        min-height: 240px;
+        max-height: 280px;
+      }
+
+      .modal-texto {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    Campanha especial de 7 de setembro · Peças artesanais feitas à mão
+  </div>
+
+  <header>
+    <div class="container navbar">
+
+      <a
+        href="#inicio"
+        class="brand"
+        aria-label="Madeirart e Fluyr Boats"
+      >
+        <span class="brand-madeirart">Madeirart</span>
+        <span class="brand-divider">×</span>
+
+        <img
+          class="logo-fluyr"
+          src="assets/Fluyr_Boats_Logo_Alta_Qualidade-1.jpg"
+          alt="Fluyr Boats by Voamenina"
+        >
+      </a>
+
+      <nav aria-label="Navegação principal">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#artesanal">Produção artesanal</a>
+        <a href="#processo">Como comprar</a>
+
+        <a
+          class="botao"
+          href="https://wa.me/5516997153724?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20sobre%20os%20produtos%20da%20Madeirart."
+          target="_blank"
+          rel="noopener"
+        >
+          Falar com especialista
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <section class="hero">
+      <div class="container hero-conteudo">
+        <div>
+          <div class="etiqueta">
+            Madeirart × Fluyr Boats by Voamenina
+          </div>
+
+          <h1>
+            Design artesanal para
+            <span>viver bons momentos.</span>
+          </h1>
+
+          <p>
+            Conheça nossa seleção de cadeiras, poltronas e espreguiçadeiras
+            produzidas artesanalmente, com tramas feitas à mão e acabamento
+            pensado para valorizar cada ambiente.
+          </p>
+
+          <div class="hero-acoes">
+            <a href="#catalogo" class="botao botao-claro">
+              Ver catálogo
+            </a>
+
+            <a
+              href="https://wa.me/5516997153724?text=Olá!%20Gostaria%20de%20receber%20informações%20sobre%20o%20catálogo%20artesanal%20da%20Madeirart."
+              target="_blank"
+              rel="noopener"
+              class="botao botao-contorno"
+            >
+              Solicitar informações
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="catalogo">
+      <div class="container">
+
+        <div class="catalogo-topo">
+          <div class="cabecalho-secao">
+            <div class="etiqueta">Coleção artesanal</div>
+
+            <h2>Peças que dão personalidade ao ambiente</h2>
+
+            <p>
+              Cada produto é feito à mão, valorizando o trabalho artesanal,
+              a atenção aos detalhes e a singularidade de cada peça.
+            </p>
+          </div>
+
+          <div class="filtros" aria-label="Filtros do catálogo">
+            <button class="filtro ativo" data-filtro="todos">
+              Todos
+            </button>
+
+            <button class="filtro" data-filtro="cadeiras">
+              Cadeiras
+            </button>
+
+            <button class="filtro" data-filtro="externo">
+              Área externa
+            </button>
+
+            <button class="filtro" data-filtro="espreguicadeiras">
+              Espreguiçadeiras
+            </button>
+          </div>
+        </div>
+
+        <div class="produtos" id="listaProdutos"></div>
+
+      </div>
+    </section>
+
+    <section class="artesanal" id="artesanal">
+      <div class="container artesanal-grid">
+
+        <div>
+          <div class="etiqueta">O valor do feito à mão</div>
+
+          <h2>Artesanato que você percebe nos detalhes.</h2>
+
+          <p>
+            Nossas peças são produzidas manualmente por artesãos,
+            respeitando o tempo necessário para criar tramas firmes,
+            acabamentos cuidadosos e produtos com identidade própria.
+          </p>
+
+          <div class="lista-beneficios">
+
+            <div class="beneficio">
+              <div class="beneficio-icone">✓</div>
+              <div>
+                <strong>Produção artesanal</strong>
+                <span>
+                  Cada peça recebe atenção individual durante sua fabricação.
+                </span>
+              </div>
+            </div>
+
+            <div class="beneficio">
+              <div class="beneficio-icone">✓</div>
+              <div>
+                <strong>Tramas feitas à mão</strong>
+                <span>
+                  Detalhes que tornam o produto exclusivo e cheio de personalidade.
+                </span>
+              </div>
+            </div>
+
+            <div class="beneficio">
+              <div class="beneficio-icone">✓</div>
+              <div>
+                <strong>Orientação personalizada</strong>
+                <span>
+                  Atendimento para ajudar você a escolher a peça ideal.
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <img
+          class="artesanal-imagem"
+          src="assets/foto1.jpeg"
+          alt="Cadeiras artesanais com trama manual"
+          loading="lazy"
+        >
+
+      </div>
+    </section>
+
+    <section id="processo">
+      <div class="container">
+
+        <div class="cabecalho-secao">
+          <div class="etiqueta">Como comprar</div>
+
+          <h2>Escolha com tranquilidade.</h2>
+
+          <p>
+            Nossa equipe ajuda você a entender os modelos, acabamentos,
+            medidas, quantidades e condições de entrega.
+          </p>
+        </div>
+
+        <div class="passos">
+
+          <article class="passo">
+            <span class="passo-numero">01</span>
+            <h3>Escolha sua peça</h3>
+            <p>
+              Conheça o catálogo e selecione o produto que mais combina
+              com seu ambiente.
+            </p>
+          </article>
+
+          <article class="passo">
+            <span class="passo-numero">02</span>
+            <h3>Fale com a equipe</h3>
+            <p>
+              Envie suas dúvidas pelo WhatsApp e informe a quantidade desejada.
+            </p>
+          </article>
+
+          <article class="passo">
+            <span class="passo-numero">03</span>
+            <h3>Receba seu orçamento</h3>
+            <p>
+              Consulte valores, disponibilidade, prazo e opções de entrega.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contato">
+      <div class="container">
+
+        <h2>Gostou de alguma peça?</h2>
+
+        <p>
+          Solicite um orçamento personalizado pelo WhatsApp e descubra
+          as opções disponíveis para o seu projeto.
+        </p>
+
+        <a
+          class="botao botao-contorno"
+          href="https://wa.me/5516997153724?text=Olá!%20Vi%20o%20catálogo%20da%20Madeirart%20e%20gostaria%20de%20solicitar%20um%20orçamento."
+          target="_blank"
+          rel="noopener"
+        >
+          Solicitar orçamento pelo WhatsApp
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+
+      <div class="rodape-grid">
+
+        <div>
+          <h3>Madeirart × Fluyr Boats</h3>
+          <p>
+            Produtos artesanais feitos à mão para ambientes com mais conforto,
+            estilo e personalidade.
+          </p>
+        </div>
+
+        <div>
+          <h3>Atendimento</h3>
+          <p>Segunda a sexta, das 9h às 18h</p>
+          <p>
+            WhatsApp:
+            <a
+              href="https://wa.me/5516997153724"
+              target="_blank"
+              rel="noopener"
+            >
+              (16) 99715-3724
+            </a>
+          </p>
+        </div>
+
+        <div>
+          <h3>Links rápidos</h3>
+          <p><a href="#catalogo">Catálogo</a></p>
+          <p><a href="#artesanal">Produção artesanal</a></p>
+          <p>
+            <a
+              href="https://wa.me/5516997153724?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento."
+              target="_blank"
+              rel="noopener"
+            >
+              Solicitar orçamento
+            </a>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="rodape-final">
+        © 2026 Madeirart. Todos os direitos reservados.
+      </div>
+
+    </div>
+  </footer>
+
+  <a
+    class="whatsapp-flutuante"
+    href="https://wa.me/5516997153724?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20artesanais%20da%20Madeirart."
+    target="_blank"
+    rel="noopener"
+    aria-label="Falar com a Madeirart pelo WhatsApp"
+    title="Falar pelo WhatsApp"
+  >
+    ☎
+  </a>
+
+  <div
+    class="modal"
+    id="modalProduto"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="tituloModal"
+  >
+    <div class="modal-conteudo">
+
+      <button
+        class="fechar-modal"
+        type="button"
+        aria-label="Fechar detalhes do produto"
+      >
+        ×
+      </button>
+
+      <div class="modal-corpo">
+
+        <img
+          class="modal-imagem"
+          id="imagemModal"
+          src=""
+          alt=""
+        >
+
+        <div class="modal-texto">
+          <span class="produto-categoria" id="categoriaModal"></span>
+
+          <h2 id="tituloModal"></h2>
+
+          <p id="descricaoModal"></p>
+
+          <p>
+            <strong>Consulte pelo WhatsApp:</strong><br>
+            cores, medidas, materiais, disponibilidade, prazo e condições
+            de entrega.
+          </p>
+
+          <a
+            id="whatsappModal"
+            class="botao"
+            href="#"
+            target="_blank"
+            rel="noopener"
+          >
+            Solicitar orçamento
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const WHATSAPP = "5516997153724";
+
+    const produtos = [
+      {
+        id: 1,
+        nome: "Cadeira Varanda Trama",
+        categoria: "cadeiras",
+        categoriaNome: "Cadeira artesanal",
+        arquivo: "c3.jpeg",
+        descricao:
+          "Cadeira artesanal com braços, estrutura resistente e assento e encosto produzidos com trama manual. Uma peça acolhedora para varandas, áreas de convivência e ambientes de descanso.",
+        preco: "Consulte o valor",
+        mensagem:
+          "Olá! Gostaria de solicitar um orçamento para a Cadeira Varanda Trama."
+      },
+      {
+        id: 2,
+        nome: "Espreguiçadeira Horizonte",
+        categoria: "espreguicadeiras",
+        categoriaNome: "Área externa",
+        arquivo: "c2.jpeg",
+        descricao:
+          "Espreguiçadeira artesanal com estrutura de linhas retas e trama feita à mão. Ideal para áreas de piscina, jardins, varandas e espaços destinados ao relaxamento.",
+        preco: "Consulte o valor",
+        mensagem:
+          "Olá! Gostaria de solicitar um orçamento para a Espreguiçadeira Horizonte."
+      },
+      {
+        id: 3,
+        nome: "Cadeira Jardim Noir",
+        categoria: "externo",
+        categoriaNome: "Cadeira artesanal",
+        arquivo: "foto1.jpeg",
+        descricao:
+          "Cadeira com estrutura escura e encosto trançado artesanalmente, combinando presença visual, conforto e acabamento manual. Perfeita para salas de jantar, varandas e áreas gourmet.",
+        preco: "Consulte o valor",
+        mensagem:
+          "Olá! Gostaria de solicitar um orçamento para a Cadeira Jardim Noir."
+      },
+      {
+        id: 4,
+        nome: "Cadeira Terraço Trama",
+        categoria: "cadeiras",
+        categoriaNome: "Conjunto para jantar",
+        arquivo: "foto2.jpeg",
+        descricao:
+          "Cadeira artesanal de encosto alto, com trama manual e visual elegante. Uma escolha versátil para compor mesas de jantar, espaços gourmet e ambientes de convivência.",
+        preco: "Consulte o valor",
+        mensagem:
+          "Olá! Gostaria de solicitar um orçamento para a Cadeira Terraço Trama."
+      }
+    ];
+
+    const listaProdutos = document.getElementById("listaProdutos");
+    const botoesFiltro = document.querySelectorAll(".filtro");
+    const modal = document.getElementById("modalProduto");
+    const fecharModal = document.querySelector(".fechar-modal");
+
+    function criarLinkWhatsApp(mensagem) {
+      return `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensagem)}`;
+    }
+
+    function renderizarProdutos(filtro = "todos") {
+      const produtosFiltrados =
+        filtro === "todos"
+          ? produtos
+          : produtos.filter((produto) => produto.categoria === filtro);
+
+      listaProdutos.innerHTML = produtosFiltrados
+        .map(
+          (produto) => `
+            <article class="produto">
+              <img
+                class="produto-imagem"
+                src="assets/${produto.arquivo}"
+                alt="${produto.nome} — produto artesanal Madeirart"
+                loading="lazy"
+              >
+
+              <div class="produto-conteudo">
+                <span class="produto-categoria">
+                  ${produto.categoriaNome}
+                </span>
+
+                <h3>${produto.nome}</h3>
+
+                <p class="produto-descricao">
+                  ${produto.descricao}
+                </p>
+
+                <div class="produto-rodape">
+                  <span class="produto-preco">
+                    ${produto.preco}
+                  </span>
+
+                  <button
+                    class="detalhes"
+                    type="button"
+                    data-produto-id="${produto.id}"
+                  >
+                    Ver detalhes →
+                  </button>
+                </div>
+              </div>
+            </article>
+          `
+        )
+        .join("");
+
+      document.querySelectorAll("[data-produto-id]").forEach((botao) => {
+        botao.addEventListener("click", () => {
+          abrirProduto(Number(botao.dataset.produtoId));
+        });
+      });
+    }
+
+    function abrirProduto(id) {
+      const produto = produtos.find((item) => item.id === id);
+
+      if (!produto) {
+        return;
+      }
+
+      document.getElementById("imagemModal").src =
+        `assets/${produto.arquivo}`;
+
+      document.getElementById("imagemModal").alt =
+        `${produto.nome} — produto artesanal Madeirart`;
+
+      document.getElementById("categoriaModal").textContent =
+        produto.categoriaNome;
+
+      document.getElementById("tituloModal").textContent =
+        produto.nome;
+
+      document.getElementById("descricaoModal").textContent =
+        produto.descricao;
+
+      document.getElementById("whatsappModal").href =
+        criarLinkWhatsApp(produto.mensagem);
+
+      modal.classList.add("aberto");
+      document.body.classList.add("modal-aberto");
+    }
+
+    function fecharProduto() {
+      modal.classList.remove("aberto");
+      document.body.classList.remove("modal-aberto");
+    }
+
+    botoesFiltro.forEach((botao) => {
+      botao.addEventListener("click", () => {
+        botoesFiltro.forEach((item) => {
+          item.classList.remove("ativo");
+        });
+
+        botao.classList.add("ativo");
+        renderizarProdutos(botao.dataset.filtro);
+      });
+    });
+
+    fecharModal.addEventListener("click", fecharProduto);
+
+    modal.addEventListener("click", (evento) => {
+      if (evento.target === modal) {
+        fecharProduto();
+      }
+    });
+
+    document.addEventListener("keydown", (evento) => {
+      if (evento.key === "Escape") {
+        fecharProduto();
+      }
+    });
+
+    renderizarProdutos();
+  </script>
+
+</body>
+</html>
