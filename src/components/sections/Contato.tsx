@@ -104,7 +104,7 @@ export const Contato = () => {
   }
 
   return (
-    <section id="contato" className="surface-verniz-alt py-24 sm:py-32 lg:py-40">
+    <section id="contato" className="surface-verniz-alt overflow-x-hidden py-24 sm:py-32 lg:py-40">
       <div className="container-luxe">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16">
           {/* Briefing que vira mensagem de WhatsApp */}

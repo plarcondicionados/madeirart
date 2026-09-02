@@ -32,6 +32,11 @@ const offsetFor = (direction: RevealProps['direction'], distance: number) => {
  * Animação de entrada ao entrar na viewport (fade + deslocamento).
  * O easing acompanha a curva do Lenis para que o elemento pareça "carregado"
  * pela própria rolagem.
+ *
+ * Atenção: `direction` "left"/"right" desloca o elemento no eixo X antes de
+ * animar. Se o elemento encostar na borda da tela, isso cria rolagem
+ * horizontal na página — por isso a seção que o contém precisa de
+ * `overflow-x-hidden`.
  */
 export const Reveal = ({
   children,

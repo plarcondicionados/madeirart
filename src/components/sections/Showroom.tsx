@@ -7,7 +7,7 @@ import { company } from '@/data/site'
 const { address, hours, mapsEmbedUrl, mapsLink } = company
 
 export const Showroom = () => (
-  <section id="showroom" className="surface-verniz py-24 sm:py-32 lg:py-40">
+  <section id="showroom" className="surface-verniz overflow-x-hidden py-24 sm:py-32 lg:py-40">
     <div className="container-luxe">
       <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5">
