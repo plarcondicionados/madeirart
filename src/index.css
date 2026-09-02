@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --header-height: 5rem;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    /* O Lenis controla a rolagem; o scroll-behavior nativo fica desligado
+       para não competir com a interpolação do smooth scroll. */
+    scroll-behavior: auto;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  body {
+    @apply bg-varnish-100 text-varnish-900 font-sans antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  ::selection {
+    @apply bg-teca/30 text-ink;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-luxe {
+    @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-12;
+  }
+
+  .eyebrow {
+    @apply text-[0.68rem] font-medium uppercase tracking-brand text-teca-dark;
+  }
+
+  .heading-display {
+    @apply font-display font-normal leading-[1.12] tracking-[-0.01em] text-varnish-900;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap text-[0.72rem] font-medium uppercase tracking-widest transition-all duration-500 ease-luxe;
+  }
+
+  .btn-primary {
+    @apply btn bg-varnish-800 px-7 py-4 text-varnish-50 hover:bg-teca-dark;
+  }
+
+  .btn-outline {
+    @apply btn border border-varnish-800/30 px-7 py-4 text-varnish-800 hover:border-varnish-800 hover:bg-varnish-800 hover:text-varnish-50;
+  }
+
+  .btn-ghost-light {
+    @apply btn border border-varnish-50/40 px-7 py-4 text-varnish-50 hover:bg-varnish-50 hover:text-varnish-900;
+  }
+
+  .field-label {
+    @apply mb-2 block text-[0.68rem] font-medium uppercase tracking-widest text-varnish-600;
+  }
+
+  .field-input {
+    @apply w-full border-b border-varnish-300 bg-transparent py-3 text-[0.95rem] text-varnish-900 outline-none transition-colors duration-300 placeholder:text-varnish-400 focus:border-teca;
+  }
+
+  /* Superfície clara com leve textura de veio — o "verniz" das seções. */
+  .surface-verniz {
+    @apply bg-varnish-100 bg-grain-verniz;
+  }
+
+  .surface-verniz-alt {
+    @apply bg-varnish-50 bg-grain-verniz;
+  }
+
+  .hairline {
+    @apply h-px w-full bg-varnish-800/12;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
